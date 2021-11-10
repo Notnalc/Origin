@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     
     float rotationSpeed = 2.0f;
     float camRotationSpeed = 1.5f;
+    float camRotation;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class CharacterController : MonoBehaviour
     {
         transform.position = transform.position + (transform.forward * Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime);
         
-        rotation = rotation + Input.GetAxis("Mouse X"); * rotationSpeed;
+        rotation = rotation + Input.GetAxis("Mouse X") * rotationSpeed;
         transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotation, 0.0f));
 
         camRotation = camRotation + Input.GetAxis("Mouse Y") * camRotationSpeed;
